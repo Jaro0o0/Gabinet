@@ -46,7 +46,9 @@ function Header() {
                     backdropFilter: headerScroll ? 'blur(10px)' : 'none',
                     color: headerScroll ? 'text.primary' : 'white',
                     py: headerScroll ? 0.5 : 1.5,
-                    border: 'none'
+                    border: 'none',
+                    borderRadius: 0,
+
                 }}
             >
                 <Container>

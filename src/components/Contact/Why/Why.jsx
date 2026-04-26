@@ -1,38 +1,38 @@
 import { Container, Typography,Box, TextField,Button, makeStyles } from "@mui/material";
 import Video from '../../../assets/video.mp4'
 import WhyImg from '../../../assets/careers.jpg'
+import { useForm } from "react-hook-form";
 import './Why.css'
 
 
 
+import emailjs from '@emailjs/browser';
 
-const Contact = () => {
-      const onSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
 
-    formData.append("access_key", "2d080484-c006-47fe-8932-95fe898fa833");
 
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: json
-    }).then((res) => res.json());
 
-    if (res.success) {
-      console.log("Success", res);
-    }
-  };
-}
 
 function Why() {
 
+  const  { register,
+    handleSubmit,
+    watch,
+    formState: { errors },} = useForm()
+
+    const onSubmit = (data) =>  {
+        // EmailJS
+      emailjs.send('service_en1xzkl', 'template_xp2ithp', data, '0ieLgYHaimhaTSLGo',
+      ).then(
+        () => {
+          alert('Wysłana')
+        }
+      ).catch((error)=>{
+        alert('bład')
+      })
+    }
+
+  
 
     return (
         // <video className="why-video" src={Video}  autoPlay muted loop></video>
@@ -41,10 +41,12 @@ function Why() {
           <Typography variant="h3" component='h1' gutterBottom='true' >Skontaktój się z nami</Typography>
             <Box className='contact-grid'>
               <Box>
-                  <form onSubmit={Contact}> 
-                      <TextField id="outlined-basic" className="form-row" sx={{ mt: 2, mb: 2, display: 'block' }} label="Imię" variant="outlined" color="primary" name="name" fullWidth required/>
-                      <TextField id="outlined-basic"  className="form-row" sx={{ mt: 2, mb: 2, display: 'block' }} label="Nazwisko" variant="outlined" name="email" fullWidth required/>
-                      <TextField id="outlined-basic"  className="form-row" sx={{ mt: 2, mb: 2, display: 'block' }} label="Wiadomość" variant="outlined" name="message" fullWidth required multiline rows={4}/>
+                {/* Odczytuje dane z fromalrza i je waliduje */}
+                  <form onSubmit={handleSubmit(onSubmit)}>                                                                                                                                        Resjestruje daane do odczytu  i ustwi reguly walidacji                                  
+                      <TextField id="outlined-basic" className="form-row" sx={{ mt: 2, mb: 2, display: 'block' }} label="Imię" variant="outlined" color="primary"  fullWidth required {...register('name',{ required: true })}/>
+                      <TextField id="outlined-basic"  className="form-row" sx={{ mt: 2, mb: 2, display: 'block' }} label="Nazwisko" variant="outlined"  fullWidth required  {...register('lastname')}/>
+                      <TextField id="outlined-basic"  className="form-row" sx={{ mt: 2, mb: 2, display: 'block' }} label="E-mail" variant="outlined"  fullWidth required  rows={4} {...register('email')} />
+                      <TextField id="outlined-basic"  className="form-row" sx={{ mt: 2, mb: 2, display: 'block' }} label="Wiadomość" variant="outlined"  fullWidth required multiline rows={4} {...register('message')} />
                       <Button variant="contained" size="large" type="submit">Wyślij</Button>
                   </form>
                   </Box>
