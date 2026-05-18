@@ -26,20 +26,6 @@
     left: 5%;
 }
 
-.contact-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-}
-
-.contact-second-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-
-}
-
-
 .second-grid-header{
     position: relative;
 }

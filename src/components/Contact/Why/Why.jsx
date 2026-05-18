@@ -1,82 +1,111 @@
-import { Container, Typography,Box, TextField,Button, makeStyles } from "@mui/material";
-import Video from '../../../assets/video.mp4'
-import WhyImg from '../../../assets/careers.jpg'
+import { Container, Typography, Box, TextField, Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 import './Why.css'
-
-
-
 import emailjs from '@emailjs/browser';
 
-
-
-
-
-
 function Why() {
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const  { register,
-    handleSubmit,
-    watch,
-    formState: { errors },} = useForm()
-
-    const onSubmit = (data) =>  {
-        // EmailJS
-      emailjs.send('service_en1xzkl', 'template_xp2ithp', data, '0ieLgYHaimhaTSLGo',
-      ).then(
-        () => {
-          alert('Wysłana')
-        }
-      ).catch((error)=>{
-        alert('bład')
-      })
+    const onSubmit = (data) => {
+        emailjs.send('service_en1xzkl', 'template_xp2ithp', data, '0ieLgYHaimhaTSLGo')
+            .then(() => alert('Wysłana'))
+            .catch(() => alert('błąd'));
     }
 
-  
-
     return (
-        // <video className="why-video" src={Video}  autoPlay muted loop></video>
-        <Container sx={{position:"relative"}} >
-          <Typography component='p' color="primary" gutterBottom='true'>FAQ</Typography>
-          <Typography variant="h3" component='h1' gutterBottom='true' >Skontaktój się z nami</Typography>
-            <Box className='contact-grid'>
-              <Box>
-                {/* Odczytuje dane z fromalrza i je waliduje */}
-                  <form onSubmit={handleSubmit(onSubmit)}>                                                                                                                                        Resjestruje daane do odczytu  i ustwi reguly walidacji                                  
-                      <TextField id="outlined-basic" className="form-row" sx={{ mt: 2, mb: 2, display: 'block' }} label="Imię" variant="outlined" color="primary"  fullWidth required {...register('name',{ required: true })}/>
-                      <TextField id="outlined-basic"  className="form-row" sx={{ mt: 2, mb: 2, display: 'block' }} label="Nazwisko" variant="outlined"  fullWidth required  {...register('lastname')}/>
-                      <TextField id="outlined-basic"  className="form-row" sx={{ mt: 2, mb: 2, display: 'block' }} label="E-mail" variant="outlined"  fullWidth required  rows={4} {...register('email')} />
-                      <TextField id="outlined-basic"  className="form-row" sx={{ mt: 2, mb: 2, display: 'block' }} label="Wiadomość" variant="outlined"  fullWidth required multiline rows={4} {...register('message')} />
-                      <Button variant="contained" size="large" type="submit">Wyślij</Button>
-                  </form>
-                  </Box>
-                <Box>
-                    <Box className='contact-second-grid' sx={{mt: 2}}>
-                      <Box>
-                        <Typography variant="h4" gutterBottom='true' className="second-grid-header">Adres</Typography>
-                        <Typography variant="p" color="#444">Wielopolska 62, 39-200 Dębica</Typography>
-                      </Box>
-                      <Box>
-                        <Typography variant="h4" gutterBottom='true' className="second-grid-header">Godziny otwarcia</Typography>
-                        <Typography variant="p" color="#444">Poniedizalek piaąßek 8:00-12:00</Typography>
-                      </Box>
-                      <Box>
-                        <Typography variant="h4" gutterBottom='true' className="second-grid-header">Kontakt</Typography>
-                        <Typography variant="p" color="#444">Telefon</Typography>
-                        <Typography variant="p" color="#444">E-mail</Typography>
+        <Container sx={{ position: "relative" }}>
+            <Typography component='p' color="primary" gutterBottom>FAQ</Typography>
+            <Typography variant="h3" component='h1' gutterBottom>Skontaktuj się z nami</Typography>
 
-                      </Box>
-                      <Box>
-                        <Typography variant="h4" gutterBottom='true' className="second-grid-header">Social Media</Typography>
-                        <Typography variant="p" color="#444">E-mail</Typography>
-                      </Box>
+            <Box sx={{ 
+                display: 'grid', 
+                gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, 
+                gap: '3rem',
+                mt: 4 
+            }}>
+                {/* Formularz */}
+                <Box>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <TextField
+                            id="name"
+                            sx={{ mt: 2, mb: 2 }}
+                            label="Imię"
+                            variant="outlined"
+                            fullWidth
+                            required
+                            {...register('name', { required: true })}
+                        />
+                        <TextField
+                            id="lastname"
+                            sx={{ mt: 2, mb: 2 }}
+                            label="Nazwisko"
+                            variant="outlined"
+                            fullWidth
+                            required
+                            {...register('lastname')}
+                        />
+                        <TextField
+                            id="email"
+                            sx={{ mt: 2, mb: 2 }}
+                            label="E-mail"
+                            variant="outlined"
+                            fullWidth
+                            required
+                            {...register('email',
+                              {required: "Email jest wymagany",
+                                  pattern: {
+                                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                                      message: "Nieprawidłowy email"
+                                    }
+                              }
+                            )}
+                        />
+                        <TextField
+                            id="message"
+                            sx={{ mt: 2, mb: 2 }}
+                            label="Wiadomość"
+                            variant="outlined"
+                            fullWidth
+                            required
+                            multiline
+                            rows={4}
+                            {...register('message')}
+                        />
+                        <Button variant="contained" size="large" type="submit">Wyślij</Button>
+                    </form>
+                </Box>
+
+                {/* Dane kontaktowe */}
+                <Box>
+                    <Box sx={{ 
+                        display: 'grid', 
+                        gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, 
+                        gap: '2rem',
+                        mt: { xs: 0, md: 2 }
+                    }}>
+                        <Box>
+                            <Typography variant="h4" gutterBottom className="second-grid-header">Adres</Typography>
+                            <Typography variant="body1" color="#444">Wielopolska 62, 39-200 Dębica</Typography>
+                        </Box>
+                        <Box>
+                            <Typography variant="h4" gutterBottom className="second-grid-header">Godziny otwarcia</Typography>
+                            <Typography variant="body1" color="#444">Poniedziałek - Piątek 8:00 - 16:00</Typography>
+                        </Box>
+                        <Box>
+                            <Typography variant="h4" gutterBottom className="second-grid-header">Kontakt</Typography>
+                            <Typography variant="body1" color="#444">Tel: +48 123 456 789</Typography>
+                            <Typography variant="body1" color="#444">E-mail: kontakt@kormedic.pl</Typography>
+                        </Box>
+                        <Box>
+                            <Typography variant="h4" gutterBottom className="second-grid-header">Social Media</Typography>
+                            <Typography variant="body1" color="#444">Facebook</Typography>
+                            <Typography variant="body1" color="#444">Instagram</Typography>
+                        </Box>
                     </Box>
                 </Box>
-         
             </Box>
-           
         </Container>
-      );
+    );
 }
 
 export default Why;

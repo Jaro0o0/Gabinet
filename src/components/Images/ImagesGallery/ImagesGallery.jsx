@@ -1,6 +1,7 @@
 import { Container, ImageList, ImageListItem, Typography ,Box} from "@mui/material";
 import { motion } from "framer-motion";
 import GalleryImg from '../../../assets/outside.jpg'
+import './ImagesGallery.css';
 
 
 const itemData = [
@@ -88,8 +89,8 @@ function ImagesGallery() {
                      viewport={{ once: true}}>
                         <ImageList sx={{ width:'100%', height:'100%'}} cols={3} variant="memory">
                             {itemData.map((image,index) => (
-                                <ImageListItem key={index}>
-                                    <img src={image.img}/>
+                                <ImageListItem key={index} className="gallery-item">
+                                    <img src={image.img} className="images-gallery-img" alt={image.title}/>
                                 </ImageListItem>
                             ))}
                         </ImageList>

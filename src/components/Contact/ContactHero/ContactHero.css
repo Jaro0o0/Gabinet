@@ -1,21 +1,16 @@
 
-
 .contact-hero-content{
     position: relative;
 }
 
 .contact-hero-img{
     width: 100%;
-    height: 70vh;
     object-fit: cover;
     object-position: top;
-    
-    
 }
 
 .contact-hero-inner{
     position: absolute;
     left: 50%;
-    bottom: 10%;
     transform: translate(-50%,-10%);
 }

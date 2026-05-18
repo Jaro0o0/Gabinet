@@ -79,14 +79,14 @@ function Footer() {
                             <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
                                 <LocationOnIcon sx={{ color: 'secondary.main', mt: 0.5 }} />
                                 <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
-                                    ul. Przykładowa 12/3<br />
-                                    00-000 Miasto
+                                     Wielopolska 62<br />
+                                     39-200 Dębica
                                 </Typography>
                             </Box>
                             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                                 <PhoneIcon sx={{ color: 'secondary.main' }} />
                                 <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
-                                    +48 123 456 789
+                                    14 681 33 21
                                 </Typography>
                             </Box>
                             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
