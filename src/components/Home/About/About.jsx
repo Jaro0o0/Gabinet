@@ -113,10 +113,10 @@ function About() {
                             sx={{ 
                                 mb: 5, 
                                 color: "text.secondary",
-                                textAlign: 'justify'
+                               
                             }}
                         >
-                            Gabinet fizjoterapeutyczny to nowoczesne i przyjazne miejsce, w którym pacjenci mogą skorzystać z kompleksowej opieki fizjoterapeutycznej. Wyposażony w specjalistyczny sprzęt do terapii manualnej, ćwiczeń rehabilitacyjnych oraz masażu, zapewnia komfort i bezpieczeństwo podczas każdej wizyty. Jasne i przestronne wnętrze sprzyja relaksowi, a indywidualne podejście do każdego pacjenta pozwala na skuteczną rekonwalescencję i powrót do pełnej sprawności.
+                           Gabinet fizjoterapeutyczny Kormedic to nowoczesne i przyjazne miejsce, w którym pacjenci mogą skorzystać z kompleksowej opieki fizjoterapeutycznej zarówno prywatnie, jak i w ramach kontraktu z NFZ. Wyposażony w specjalistyczny sprzęt do terapii manualnej, ćwiczeń rehabilitacyjnych oraz masażu, zapewnia komfort i bezpieczeństwo podczas każdej wizyty. Jasne i przestronne wnętrze sprzyja relaksowi, a indywidualne podejście do każdego pacjenta pozwala na skuteczną rekonwalescencję i powrót do pełnej sprawności.
                         </Typography>
 
                         <Box>

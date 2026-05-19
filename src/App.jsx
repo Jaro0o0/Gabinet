@@ -11,19 +11,13 @@ import Our from './pages/Our'
 import Footer from './components/Common/Footer/Footer'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import './index.css'
-import Why from './components/Contact/Why/Why'
 import ScrollToTop from './components/Common/ScrollToTop/ScrollToTop'
-
-
-
-
+import { Toaster } from 'react-hot-toast'
 
 function App() {
- 
-
   return (
-  
     <BrowserRouter>
+        <Toaster position="top-center" reverseOrder={false} />
         <Header/>
         <ScrollToTop/>
         <Routes>
@@ -33,13 +27,9 @@ function App() {
           <Route path='/faq' element={<Questions/>}/>
           <Route path='/oferta' element={<Steps/>}/>
           <Route path='/o-nas' element={<Our/>}/>
-          
         </Routes>
         <Footer/>
     </BrowserRouter>
-   
-      
-  
   )
 }
 

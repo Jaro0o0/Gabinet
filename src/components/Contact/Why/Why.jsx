@@ -2,14 +2,22 @@ import { Container, Typography, Box, TextField, Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 import './Why.css'
 import emailjs from '@emailjs/browser';
+import toast from 'react-hot-toast';
 
 function Why() {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onSubmit = (data) => {
+        const loadingToast = toast.loading('Wysyłanie wiadomości...');
+        
         emailjs.send('service_0k4dy3d', 'template_uohgoor', data, '0ieLgYHaimhaTSLGo')
-            .then(() => alert('Wysłana'))
-            .catch(() => alert('błąd'));
+            .then(() => {
+                toast.success('Wiadomość została wysłana pomyślnie!', { id: loadingToast });
+                reset();
+            })
+            .catch(() => {
+                toast.error('Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie.', { id: loadingToast });
+            });
     }
 
     return (
@@ -51,6 +59,8 @@ function Why() {
                             variant="outlined"
                             fullWidth
                             required
+                            error={!!errors.email}
+                            helperText={errors.email?.message}
                             {...register('email',
                               {required: "Email jest wymagany",
                                   pattern: {

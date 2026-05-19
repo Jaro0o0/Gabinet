@@ -15,6 +15,8 @@ import Img_las from '../../../assets/imgs/IMG_2059.jpeg'
 import Img_dre from '../../../assets/imgs/IMG_2077.jpeg'
 import Img_exe from '../../../assets/imgs/IMG_2085.jpeg'
 import Img_mag from '../../../assets/imgs/IMG_2072.jpeg'
+import Img_vol from '../../../assets/imgs/services/volume.jpeg'
+import Img_L from '../../../assets/imgs/services/laser.jpeg'
 
 function ServicesMain() {
     const items = [
@@ -45,13 +47,13 @@ function ServicesMain() {
         {
             title: 'Laser',
             price: '15zł',
-            img: Img_las,
+            img: Img_L,
             description: 'Zastosowanie wiązki laserowej w celu przyspieszenia gojenia i redukcji stanu zapalnego.'
         },
         {
             title: 'Ultradźwięki',
             price: '15zł',
-            img: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=800',
+            img: Img_vol,
             description: 'Fala akustyczna docierająca do głębokich tkanek, działająca przeciwbólowo.'
         },
         {
