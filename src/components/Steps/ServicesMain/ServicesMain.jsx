@@ -1,98 +1,111 @@
 import { Box, Typography, Container, Paper } from "@mui/material";
-import ServiceImg from '../../../assets/careers.jpg'
 import './ServicesMain.css'
 import { motion } from "framer-motion";
+
+
+import Img_one from '../../../assets/imgs/services/one.jpg'
+import Img_two from '../../../assets/imgs/services/two.jpg'
+import Img_three from '../../../assets/imgs/services/three.jpg'
+import Img_four from '../../../assets/imgs/services/indvidual.jpg'
+
+import Img_krio from '../../../assets/imgs/IMG_2171.jpeg'
+import Img_Elec from '../../../assets/imgs/IMG_2067.jpeg'
+import Img_sol from '../../../assets/imgs/image00002.jpeg'
+import Img_las from '../../../assets/imgs/IMG_2059.jpeg' 
+import Img_dre from '../../../assets/imgs/IMG_2077.jpeg'
+import Img_exe from '../../../assets/imgs/IMG_2085.jpeg'
+import Img_mag from '../../../assets/imgs/IMG_2072.jpeg'
 
 function ServicesMain() {
     const items = [
         {
             title: 'Masaż częściowy kręgosłupa',
             price: '70zł',
-            img: ServiceImg,
+            img: Img_one,
             description: 'Skupiony na wybranym odcinku kręgosłupa, niweluje napięcia i ból.'
         },
         {
             title: 'Masaż całościowy kręgosłupa',
             price: '100zł',
-            img: ServiceImg,
+            img: Img_one,
             description: 'Kompleksowy masaż wszystkich odcinków kręgosłupa dla pełnej regeneracji.'
         },
         {
             title: 'Masaż kończyn – 1 okolica',
             price: '70zł',
-            img: ServiceImg,
+            img: Img_two,
             description: 'Relaksuje i usprawnia krążenie w wybranej kończynie.'
         },
         {
             title: 'Masaż limfatyczny ręczny',
             price: '80zł',
-            img: ServiceImg,
+            img: Img_three,
             description: 'Pobudza krążenie limfy, redukuje obrzęki i wspomaga detoksykację.'
         },
         {
             title: 'Laser',
             price: '15zł',
-            img: ServiceImg,
+            img: Img_las,
             description: 'Zastosowanie wiązki laserowej w celu przyspieszenia gojenia i redukcji stanu zapalnego.'
         },
         {
             title: 'Ultradźwięki',
             price: '15zł',
-            img: ServiceImg,
+            img: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=800',
             description: 'Fala akustyczna docierająca do głębokich tkanek, działająca przeciwbólowo.'
         },
         {
             title: 'Sollux',
             price: '15zł',
-            img: ServiceImg,
+            img: Img_sol,
             description: 'Naświetlanie promieniowaniem podczerwonym, które rozgrzewa i poprawia ukrwienie.'
         },
         {
             title: 'Pole magnetyczne',
             price: '15zł',
-            img: ServiceImg,
+            img:  Img_mag,
             description: 'Stymuluje regenerację tkanek i kości za pomocą pola o niskiej częstotliwości.'
         },
         {
             title: 'Elektroterapia',
             price: '15zł',
-            img: ServiceImg,
+            img: Img_Elec,
             description: 'Leczenie prądami o różnej częstotliwości w celu uśmierzenia bólu i stymulacji mięśni.'
         },
         {
             title: 'Krioterapia',
             price: '25zł',
-            img: ServiceImg,
+            img: Img_krio ,
             description: 'Leczenie zimnem, które zmniejsza obrzęki, ból i przyspiesza regenerację.'
         },
         {
             title: 'Ćwiczenia w odciążeniu',
             price: '15zł',
-            img: ServiceImg,
+            img: Img_exe,
             description: 'Ćwiczenia wykonywane w specjalnym systemie podwieszek, nieobciążające stawów.'
         },
         {
             title: 'Terapia indywidualna',
             price: '60zł',
-            img: ServiceImg,
+            img: Img_four,
             description: 'Personalizowana praca z terapeutą dopasowana do specyficznych potrzeb pacjenta.'
         },
         {
             title: 'Drenaż limfatyczny mechaniczny – 30 min',
             price: '50zł',
-            img: ServiceImg,
+            img: Img_dre,
             description: 'Sekwencyjny masaż uciskowy wspomagający układ limfatyczny.'
         },
         {
             title: 'Drenaż limfatyczny mechaniczny – 40 min',
             price: '70zł',
-            img: ServiceImg,
+            img: Img_dre,
             description: 'Wydłużona sesja drenażu mechanicznego dla lepszych efektów terapeutycznych.'
         },
         {
             title: 'Drenaż limfatyczny mechaniczny – 60 min',
             price: '80zł',
-            img: ServiceImg,
+            img: Img_dre,
             description: 'Pełna sesja drenażu mechanicznego zapewniająca maksymalne odprężenie i drenaż.'
         },
     ];

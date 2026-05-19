@@ -9,23 +9,23 @@ import { fadeInUp, viewportConfig } from '../../../animations';
 
 const testimonials = [
     {
-        name: "Adam Nowak",
-        text: "Serdecznie polecam zabiegi w Kormedic - sprawnie, fachowo i rzetelnie. Ból pleców ustąpił już po drugiej wizycie.",
+        name: "Karolina Buch",
+        text: "Polecam ❤️",
         rating: 5
     },
     {
-        name: "Marta Kowalska",
-        text: "Wspaniałe podejście do pacjenta. Pełen profesjonalizm i ogromna wiedza. Gabinet jest bardzo nowoczesny i czysty.",
+        name: "Janina Po",
+        text: "Serdecznie polecam zabiegi w Kormedic - sprawnie , fachowo i rzetelnie",
         rating: 5
     },
     {
-        name: "Jan Zieliński",
+        name: "Barbara Marek-Zborowska",
+        text: "Profesjonalne podejście Zespołu i bardzo sympatyczna atmosfera, jak najbardziej polecam",
+        rating: 5
+    },
+    {
+        name: "Małgorzata S.",
         text: "Z pełnym przekonaniem polecam ten gabinet każdej osobie, która szuka fachowej pomocy i realnych efektów.",
-        rating: 5
-    },
-    {
-        name: "Anna Wiśniewska",
-        text: "Najlepsza fizjoterapia w mieście. Bardzo miła atmosfera i skuteczne metody leczenia.",
         rating: 5
     }
 ];
@@ -78,12 +78,13 @@ function Testimonies() {
                         style={{ padding: '20px 0 60px 0' }}
                     >
                         {testimonials.map((t, index) => (
-                            <SwiperSlide key={index}>
+                            <SwiperSlide key={index} style={{ display: 'flex', height: 'auto' }}>
                                 <Paper
                                     elevation={0}
                                     sx={{
                                         p: 4,
                                         height: '100%',
+                                        width: '100%',
                                         borderRadius: 4,
                                         display: 'flex',
                                         flexDirection: 'column',

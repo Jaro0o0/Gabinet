@@ -7,7 +7,7 @@ function Why() {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = (data) => {
-        emailjs.send('service_en1xzkl', 'template_xp2ithp', data, '0ieLgYHaimhaTSLGo')
+        emailjs.send('service_0k4dy3d', 'template_uohgoor', data, '0ieLgYHaimhaTSLGo')
             .then(() => alert('Wysłana'))
             .catch(() => alert('błąd'));
     }
@@ -94,7 +94,7 @@ function Why() {
                         <Box>
                             <Typography variant="h4" gutterBottom className="second-grid-header">Kontakt</Typography>
                             <Typography variant="body1" color="#444">Tel: +48 123 456 789</Typography>
-                            <Typography variant="body1" color="#444">E-mail: kontakt@kormedic.pl</Typography>
+                            <Typography variant="body1" color="#444">E-mail: kormedickontakt@gmail.com</Typography>
                         </Box>
                         <Box>
                             <Typography variant="h4" gutterBottom className="second-grid-header">Social Media</Typography>

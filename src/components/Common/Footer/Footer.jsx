@@ -92,7 +92,7 @@ function Footer() {
                             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                                 <EmailIcon sx={{ color: 'secondary.main' }} />
                                 <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
-                                    kontakt@kormedic.pl
+                                    kormedickontakt@gmail.com
                                 </Typography>
                             </Box>
                         </Stack>
