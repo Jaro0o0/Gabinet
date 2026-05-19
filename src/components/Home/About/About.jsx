@@ -3,6 +3,7 @@ import IMG from '../../../assets/outside.jpg'
 import './About.css'
 import { motion } from "framer-motion";
 import { fadeInUp, fadeInLeft, fadeInRight, viewportConfig } from '../../../animations';
+import { Link } from 'react-router';
 
 function About() {
     return (
@@ -121,6 +122,8 @@ function About() {
 
                         <Box>
                             <Button 
+                                component={Link}
+                                to="/oferta"
                                 variant="contained" 
                                 color="primary"
                                 size="large"

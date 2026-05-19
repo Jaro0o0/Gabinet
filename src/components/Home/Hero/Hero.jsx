@@ -1,8 +1,9 @@
 import Video from '../../../assets/video2.mp4'
 import './Hero.css'
-import { Box, Typography, Button, Container, ButtonGroup, Stack } from '@mui/material';
+import { Box, Typography, Button, Container, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import { fadeInUp, fadeIn, staggerContainer } from '../../../animations';
+import { Link } from 'react-router';
 
 function Hero() {
     return (
@@ -65,6 +66,8 @@ function Hero() {
                             variants={fadeInUp}
                         >
                             <Button 
+                                component={Link}
+                                to="/oferta"
                                 variant="contained" 
                                 color="secondary" 
                                 size='large' 
@@ -73,6 +76,8 @@ function Hero() {
                                 OFERTA
                             </Button>
                             <Button 
+                                component={Link}
+                                to="/contact"
                                 variant="outlined" 
                                 size='large' 
                                 sx={{ 

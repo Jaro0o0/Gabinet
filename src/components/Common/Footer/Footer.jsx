@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Grid, Link as MuiLink, Stack, IconButton } from "@mui/material";
+import { Box, Container, Typography, Grid, Link as MuiLink, Stack, IconButton, Button } from "@mui/material";
 import { Link } from "react-router";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -25,14 +25,6 @@ function Footer() {
                         <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.7)', mb: 4, maxWidth: '350px' }}>
                             Pomagamy naszym pacjentom pokonać ból i ograniczenia ruchowe, oferując skuteczną rehabilitację, nowoczesne terapie i wsparcie na każdym etapie powrotu do zdrowia.
                         </Typography>
-                        <Stack direction="row" spacing={2}>
-                            <IconButton sx={{ color: 'white', backgroundColor: 'rgba(255,255,255,0.1)', '&:hover': { backgroundColor: 'secondary.main' } }}>
-                                <FacebookIcon />
-                            </IconButton>
-                            <IconButton sx={{ color: 'white', backgroundColor: 'rgba(255,255,255,0.1)', '&:hover': { backgroundColor: 'secondary.main' } }}>
-                                <InstagramIcon />
-                            </IconButton>
-                        </Stack>
                     </Grid>
 
                     <Grid item xs={12} sm={6} md={2}>
@@ -63,11 +55,27 @@ function Footer() {
                             Nasze Usługi
                         </Typography>
                         <Stack spacing={2}>
-                            {['Terapia manualna', 'Osteopatia', 'Masaż leczniczy', 'Rehabilitacja', 'Kinesiotaping'].map((item) => (
+                            {['Masaż częściowy kręgosłupa','Masaż całościowy kręgosłupa','Masaż kończyn – 1 okolica','Masaż limfatyczny ręczny','Laser','Ultradźwięki','Sollux','Elektroterapia', ].map((item) => (
                                 <Typography key={item} variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
                                     {item}
                                 </Typography>
+                                
                             ))}
+                            <MuiLink 
+                                component={Link} 
+                                to="/oferta"
+                               
+                                sx={{ 
+                                    color: 'secondary.main', 
+                                    textDecoration: 'none',
+                                    fontWeight: 500,
+
+                                    pt: 1,
+                                    '&:hover': { color: 'white' }
+                                }}
+                            >
+                                Wszystkie usługi →
+                            </MuiLink>
                         </Stack>
                     </Grid>
 

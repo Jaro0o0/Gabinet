@@ -4,25 +4,29 @@ import ServiceImg from '../../../assets/careers.jpg'
 import { motion } from "framer-motion";
 import { Link } from "react-router";
 import { fadeInUp, staggerContainer, hoverScale, viewportConfig } from '../../../animations';
+// IMGS
+import Img_three from '../../../assets/imgs/services/three.jpg'
+import Img_L from '../../../assets/imgs/services/laser.jpeg'
+import Img_Elec from '../../../assets/imgs/IMG_2067.jpeg'
 
 const servicesData = [
     {
         title: "Masaż limfatyczny ręczny",
         description: "Pobudza krążenie limfy, redukuje obrzęki i wspomaga detoksykację.",
         price: "80zł",
-        img: ServiceImg
+        img: Img_three,
     },
     {
         title: "Laser",
         description: "Zastosowanie wiązki laserowej w celu przyspieszenia gojenia i redukcji stanu zapalnego.",
         price: "15zł ",
-        img: ServiceImg
+        img: Img_L,
     },
     {
         title: "Elektroterapia",
         description: "Leczenie prądami o różnej częstotliwości w celu uśmierzenia bólu i stymulacji mięśni.",
         price: "15zł",
-        img: ServiceImg
+        img: Img_Elec,
     }
 ];
 

@@ -106,11 +106,6 @@ function Why() {
                             <Typography variant="body1" color="#444">Tel: +48 123 456 789</Typography>
                             <Typography variant="body1" color="#444">E-mail: kormedickontakt@gmail.com</Typography>
                         </Box>
-                        <Box>
-                            <Typography variant="h4" gutterBottom className="second-grid-header">Social Media</Typography>
-                            <Typography variant="body1" color="#444">Facebook</Typography>
-                            <Typography variant="body1" color="#444">Instagram</Typography>
-                        </Box>
                     </Box>
                 </Box>
             </Box>

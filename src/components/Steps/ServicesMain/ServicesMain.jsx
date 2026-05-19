@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 
 import Img_one from '../../../assets/imgs/services/one.jpg'
+import Img_full from '../../../assets/imgs/services/full.jpg'
 import Img_two from '../../../assets/imgs/services/two.jpg'
 import Img_three from '../../../assets/imgs/services/three.jpg'
 import Img_four from '../../../assets/imgs/services/indvidual.jpg'
@@ -29,7 +30,7 @@ function ServicesMain() {
         {
             title: 'Masaż całościowy kręgosłupa',
             price: '100zł',
-            img: Img_one,
+            img:  Img_full,
             description: 'Kompleksowy masaż wszystkich odcinków kręgosłupa dla pełnej regeneracji.'
         },
         {
@@ -113,31 +114,41 @@ function ServicesMain() {
     ];
 
     return (
-        <Container>
+        <Container sx={{ py: 8 }}>
             <Box className='cards' sx={{
+                display: 'grid',
                 gridTemplateColumns: {
                     xs: '1fr',
-                    sm: '1fr',
+                    sm: '1fr 1fr',
                     md: '1fr 1fr 1fr'
-                }
+                },
+                gap: 4
             }}>
                 {items.map((card, index) => (
-                    <Paper className='card' component={motion.div}
-                        initial={{ y: 50 }}
-                        whileInView={{ y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.02 }}
+                    <Paper 
+                        className='card' 
+                        component={motion.div}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.05 }}
                         viewport={{ once: true }}
-                        elevation={5}
+                        elevation={2}
                         key={index}
                     >
                         <Box className='services-card-img-box'>
                             <img src={card.img} className='services-card-img' alt={card.title} />
                         </Box>
                         <Box className='services-card-text-box'>
-                            <Typography variant="h4" gutterBottom>{card.title}</Typography>
-                            <Typography variant="p">{card.description}</Typography>
+                            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
+                                {card.title}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                {card.description}
+                            </Typography>
                         </Box>
-                        <Typography variant="p">Cena: {card.price}</Typography>
+                        <Typography className="price-tag">
+                            Cena: {card.price}
+                        </Typography>
                     </Paper>
                 ))}
             </Box>
