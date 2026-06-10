@@ -25,7 +25,7 @@ function Form() {
     
     return (
         <Container sx={{ position: "relative" }}>
-            <Typography component='p' color="primary" gutterBottom>Kontakt</Typography>
+            <Typography component='p' color="primary" gutterBottom>KONTAKT</Typography>
             <Typography variant="h3" component='h1' gutterBottom>Skontaktuj się z nami</Typography>
 
             <Box sx={{ 
