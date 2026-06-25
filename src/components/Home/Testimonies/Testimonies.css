@@ -1,3 +1,7 @@
+.testimonies-swiper {
+    padding: 20px 0 60px 0;
+}
+
 .swiper-slide {
     height: auto !important;
     display: flex !important;

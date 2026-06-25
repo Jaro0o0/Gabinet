@@ -4,6 +4,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Container, Box } from '@mui/material';
+import './Faq.css';
 
 function Faq() {
     const questions = [
@@ -34,19 +35,19 @@ function Faq() {
     ];
 
     return (
-        <Box sx={{ padding: '95px 0' }}>
+        <Box className="faq-wrapper">
             <Container>
-                <Typography variant="h3" align="center" gutterBottom sx={{ mb: 6, fontWeight: 'bold' }}>
+                <Typography variant="h3" align="center" gutterBottom className="faq-title">
                     Często zadawane pytania
                 </Typography>
                 {questions.map((item, index) => (
-                    <Accordion key={index} sx={{ mb: 1, boxShadow: 1, '&:before': { display: 'none' } }}>
+                    <Accordion key={index} className="faq-accordion">
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls={`panel${index}-content`}
                             id={`panel${index}-header`}
                         >
-                            <Typography sx={{ fontWeight: '500', fontSize: '1.1rem' }}>
+                            <Typography className="faq-question">
                                 {item.question}
                             </Typography>
                         </AccordionSummary>

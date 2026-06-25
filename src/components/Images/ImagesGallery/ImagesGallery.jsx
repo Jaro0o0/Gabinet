@@ -75,12 +75,6 @@ function ImagesGallery() {
                                     className="images-gallery-img" 
                                     alt={item.title}
                                     loading="lazy"
-                                    style={{
-                                        borderRadius: '16px',
-                                        width: '100%',
-                                        height: '100%',
-                                        objectFit: 'cover',
-                                    }}
                                 />
                             </ImageListItem>
                         );

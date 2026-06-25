@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Box,Typography } from "@mui/material";
+import './Inner.css';
 function Inner() {
     return (  
           <Box className='services-hero-inner'>

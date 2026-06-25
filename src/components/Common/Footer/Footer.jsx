@@ -1,4 +1,5 @@
 import { Box, Container, Typography, Grid, Link as MuiLink, Stack, IconButton, Button } from "@mui/material";
+import './Footer.css';
 import { Link } from "react-router";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';

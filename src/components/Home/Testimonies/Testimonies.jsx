@@ -6,6 +6,7 @@ import { Box, Container, Typography, Paper, Avatar, Rating } from '@mui/material
 import { motion } from 'framer-motion';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import { fadeInUp, viewportConfig } from '../../../animations';
+import './Testimonies.css';
 
 const testimonials = [
     {
@@ -75,10 +76,10 @@ function Testimonies() {
                             delay: 5000,
                             disableOnInteraction: false,
                         }}
-                        style={{ padding: '20px 0 60px 0' }}
+                        className="testimonies-swiper"
                     >
                         {testimonials.map((t, index) => (
-                            <SwiperSlide key={index} style={{ display: 'flex', height: 'auto' }}>
+                            <SwiperSlide key={index}>
                                 <Paper
                                     elevation={0}
                                     sx={{

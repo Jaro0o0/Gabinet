@@ -88,7 +88,7 @@ function Services() {
                                     <img 
                                         src={service.img} 
                                         alt={service.title}
-                                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                        className="services-card-img"
                                     />
                                 </Box>
                                 <Box sx={{ p: 4, flexGrow: 1 }}>
